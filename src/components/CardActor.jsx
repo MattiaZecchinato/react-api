@@ -1,5 +1,12 @@
 export default function CardActor({ actor }) {
     
+    let awards = actor.awards;
+
+    if (typeof(awards) === 'string') {
+
+        const convertedAwards = awards.split(", ");
+        awards = convertedAwards;
+    }
 
     return <div className="card-box">
 
@@ -30,7 +37,7 @@ export default function CardActor({ actor }) {
         <div className="awards-box">
             <h4>AWARDS</h4>
             <ul>
-                {actor.awards.map((elem, i) => <li key={i}>{elem}</li>)}
+                {awards.map((elem, i) => <li key={i}>{elem}</li>)}
             </ul>
         </div>
 

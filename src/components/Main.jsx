@@ -8,12 +8,14 @@ import CardActor from './CardActor';
 export default function Main() {
 
     const [actors, setActorList] = useState([]);
+    const [actress, setActressList] = useState([]);
 
-    const uri = 'https://www.freetestapi.com/api/v1/actors';
+    const uriActors = 'https://www.freetestapi.com/api/v1/actors';
+    const uriActress = 'https://www.freetestapi.com/api/v1/actresses';
 
     useEffect(() => {
 
-        axios.get(uri).then(res => {
+        axios.get(uriActors).then(res => {
 
             const actorsList = res.data;
             console.log(actorsList);
@@ -24,8 +26,28 @@ export default function Main() {
             console.log('Error');
         });
     }, []);
+
+    useEffect(() => {
+
+        axios.get(uriActress).then(res => {
+
+            const actressList = res.data;
+            console.log(actressList);
+            setActressList(actressList);
+        })
+        .catch(() => {
+
+            console.log('Error');
+        });
+    }, [])
     
-    return <div className="cards-container">
-        {actors.map(elem => <CardActor actor={elem} key={elem.id} />)}
-    </div>
+    return <>
+        <div className="cards-container">
+            {actors.map(elem => <CardActor actor={elem} key={elem.id} />)}
+        </div>
+        <hr />
+        <div className="cards-container">
+            {actress.map(elem => <CardActor actor={elem} key={elem.id} />)}
+        </div>
+    </>
 }
