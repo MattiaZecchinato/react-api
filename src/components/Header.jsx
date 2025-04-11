@@ -1,6 +1,6 @@
 export default function Header() {
 
     return <>
-        <h1>Actors/Actress List</h1>
+        <h1>Actors List</h1>
     </>
 }

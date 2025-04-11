@@ -7,19 +7,28 @@ export default function CardActor({ actor }) {
             <img src={actor.image} alt={actor.name} />
         </div>
 
+        <div className="name-box">
+            <h2>{actor.name}</h2>
+        </div>
+
         <div className="info-box">
-            <ul>
-                <li>{actor.name}</li>
-                <li>{actor.birth_year}</li>
-                <li>{actor.nationality}</li>
-            </ul>
+            <div className="birth-box">
+                <h4>BIRTH YEAR</h4>
+                <p>{actor.birth_year}</p>
+            </div>
+            <div className="nat-box">
+                <h4>NATIONALITY</h4> 
+                <p>{actor.nationality}</p>
+            </div>
         </div>
 
         <div className="bio-box">
+            <h4>BIOGRAPHY</h4>
             <p>{actor.biography}</p>
         </div>
 
         <div className="awards-box">
+            <h4>AWARDS</h4>
             <ul>
                 {actor.awards.map((elem, i) => <li key={i}>{elem}</li>)}
             </ul>

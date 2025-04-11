@@ -1,0 +1,96 @@
+/******* 
+fonts 
+*******/
+@import url('https://fonts.googleapis.com/css2?family=Special+Gothic&display=swap');
+/* font-family: "Special Gothic", sans-serif; */
+
+
+/******* 
+reset 
+*******/
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    font-family: "Special Gothic", sans-serif;
+}
+
+/******* 
+common 
+*******/
+li {
+
+    list-style-type: none;
+}
+
+/******* 
+header 
+*******/
+h1 {
+
+    text-align: center;
+    padding: 20px;
+    background-color: #000;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+/******* 
+main 
+*******/
+.cards-container {
+
+    background-image: url(./assets/bg-main.jpg);
+    padding: 20px 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* card */
+.card-box {
+
+    border: 1px solid #000;
+    border-radius: 15px;
+    padding: 15px;
+    width: calc((100% - 100px) / 6);
+    display: flex;
+    flex-direction: column;
+    background-color: #faebd7;
+}
+
+.card-box > div {
+
+    margin-bottom: 5px;
+}
+
+.img-box,
+.name-box {
+
+    align-self: center;
+}
+
+.img-box {
+
+    width: 250px;
+    height: 250px;
+}
+
+.img-box img {
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+}
+
+.birth-box {
+
+    margin-bottom: 5px;
+}
