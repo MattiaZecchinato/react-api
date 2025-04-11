@@ -1,11 +1,25 @@
 export default function CardActor({ actor }) {
-    
+
+    console.log(actor);
+
     let awards = actor.awards;
 
     if (typeof(awards) === 'string') {
 
         const convertedAwards = awards.split(", ");
         awards = convertedAwards;
+    }
+
+    // famous movie
+    let movies;
+
+    if (Object.keys(actor).includes('most_famous_movies')) {
+
+        movies = actor.most_famous_movies;
+    }
+    else {
+
+        movies = actor.known_for;
     }
 
     return <div className="card-box">
@@ -40,6 +54,13 @@ export default function CardActor({ actor }) {
                 {awards.map((elem, i) => <li key={i}>{elem}</li>)}
             </ul>
         </div>
+
+        {/* <div className="awards-box">
+            <h4>MOVIES</h4>
+            <ul>
+                {movies.map((elem, i) => <li key={i}>{elem}</li>)}
+            </ul>
+        </div> */}
 
     </div>
 }
